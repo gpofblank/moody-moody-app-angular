@@ -1,0 +1,46 @@
+<div class="container-fluid" *ngIf="ButtonNotClicked; else ButtonClicked">
+  <button type="button" class="btn btn-warning" id="PrimaryButton" (click)="onFeelingLucky()">
+    Feeling Lucky!
+  </button>
+</div>
+<ng-template #ButtonClicked>
+  <div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col"></div>
+    <div class="col-xl-11">
+      <h1>
+        {{ randomObject.title }}
+      </h1>
+      <div class="mx-auto text-center">
+        <img [src]="randomObject.pic" alt="{{ randomObject.title }}" class="img-fluid">
+      </div>
+      <p>
+        {{ randomObject.desc }}
+      </p>
+      <div class="row mx-auto justify-content-center">
+        <div class="btn-toolbar">
+          <button type="button" class="btn btn-danger btn-dark bg-dark" (click)="onFeelingLuckyAgain()" id="SecondaryButton">
+            Again Please!
+          </button>
+          <button type="button" class="btn btn-danger btn-dark bg-dark" (click)="onBack()" id="SecondaryButton">
+            Back!
+          </button>
+          <button type="button" class="btn btn-danger btn-dark bg-dark" (click)="onHome()" id="SecondaryButton">
+            Home!
+          </button>
+        </div>
+        <div class="container" style="padding-top: 50px;">
+          <div class="row align-items-center">
+            <div class="row mx-auto justify-content-center">
+              <div class="btn-toolbar">
+                <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share this site with friends</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+  </div>
